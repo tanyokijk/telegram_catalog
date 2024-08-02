@@ -19,8 +19,10 @@ $this->call([
     LanguageSeeder::class,
 ]);
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'password' => 'admin228',
+            'role' => 'admin',
         ]);
     }
 }
