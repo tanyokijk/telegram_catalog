@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name', 64);
             $table->string('slug', 71)->unique();
             $table->string('icon', 64)->nullable();
-            $table->char('background_color', 6);
-            $table->string('text_color', 6);
+            $table->char('background_color', 7);
+            $table->string('text_color', 7);
             $table->string('meta_title', 128)->unique();
             $table->string('meta_description', 278);
             $table->string('image', 128)->nullable();

@@ -2,15 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
 {
-    use HasFactory;
+    use HasFactory,HasUuids;
 
-    protected $guarded = [
+    protected $fillable = [
         'name',
         'alpha_2_code',
     ];
+
+    public $timestamps = false;
 }

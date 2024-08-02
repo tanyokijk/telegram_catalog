@@ -13,7 +13,7 @@ class ContentTypePolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class ContentTypePolicy
      */
     public function view(User $user, ContentType $contentType): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class ContentTypePolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class ContentTypePolicy
      */
     public function update(User $user, ContentType $contentType): bool
     {
-        //
+        return $user->isAdmin() || $user->isModerator();
     }
 
     /**
@@ -45,7 +45,7 @@ class ContentTypePolicy
      */
     public function delete(User $user, ContentType $contentType): bool
     {
-        //
+        return $user->isAdmin() || $user->isModerator();
     }
 
     /**
@@ -53,7 +53,7 @@ class ContentTypePolicy
      */
     public function restore(User $user, ContentType $contentType): bool
     {
-        //
+        return $user->isAdmin() || $user->isModerator();
     }
 
     /**
@@ -61,6 +61,6 @@ class ContentTypePolicy
      */
     public function forceDelete(User $user, ContentType $contentType): bool
     {
-        //
+        return $user->isAdmin() || $user->isModerator();
     }
 }

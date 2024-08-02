@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\UserRoleEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,7 @@ return new class extends Migration
             $table->string('avatar_url', 2048)->nullable();
             $table->string('first_name', 64)->nullable();
             $table->string('last_name', 64)->nullable();
+            $table->enum('role', UserRoleEnum::values())->default('user');
         });
     }
 
@@ -24,5 +26,6 @@ return new class extends Migration
             // Тут вказуйте, як відкотити зміни
             $table->dropColumn(['telegram_id', 'username', 'avatar_url', 'first_name', 'last_name']);
         });
+
     }
 };

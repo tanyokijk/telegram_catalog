@@ -17,7 +17,7 @@ class ContentTypeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'id' => fake()->uuid
         ];
     }
 }

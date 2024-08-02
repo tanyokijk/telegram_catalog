@@ -2,19 +2,15 @@
 
 namespace App\Enums;
 
-enum UserRoleEnum :string
+enum UserRoleEnum : string
 {
-    case Admin = 'admin';
-    case Moderator = 'moderator';
-    case User = 'user';
+    case ADMIN = 'admin';
+    case MODERATOR = 'moderator';
 
-    public function isAdmin(): bool
-    {
-        return $this === UserRoleEnum::Admin;
-    }
+    case USER = 'user';
 
-    public function isModerator(): bool
+    public static function values(): array
     {
-        return $this === UserRoleEnum::Moderator;
+        return array_column(self::cases(), 'value');
     }
 }
